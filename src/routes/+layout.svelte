@@ -11,7 +11,6 @@
             align-items: center;
             justify-content: center;
             a {
-                font-family: sans-serif;
                 font-size: 2rem;
                 color: white;
                 text-decoration: none;
@@ -29,7 +28,6 @@
                     display: flex;
                     list-style-type: none;
                     a {
-                        font-family: sans-serif;
                         display: flex;
                         justify-content: center;
                         align-items: center;

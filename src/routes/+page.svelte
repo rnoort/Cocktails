@@ -48,7 +48,6 @@
         background-color: lightgrey;
         gap: 1rem;
         p { 
-            font-family: sans-serif;
             margin: 0;
             margin-left: 1rem;
         }
