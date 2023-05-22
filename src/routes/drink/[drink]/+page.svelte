@@ -21,12 +21,23 @@
 
 <style lang="scss">
     .container {
-        display: flex;
         justify-content: center;
         height: calc(100% - 5rem);
         align-items: center;
+        h2 {
+            text-align: center;
+        }
     }
 
+    .ingredient {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .ingredientsbox {
+        display: flex;
+    }
 
 </style>
 
@@ -37,20 +48,19 @@
         <h2>{drink.strDrink}</h2>
         <div class="ingredients">
             <h3>Ingredients</h3>
-            <div>
+            <div class="ingredientsbox">
                 {#each drink.ingredients as ingredient, index}
-                    <div>
-                        <p>{ingredient.measurement}</p>
+                    <div class="ingredient">
                         <img src="https://thecocktaildb.com/images/ingredients/{ingredient.ingredient}-Small.png">
+                        <p>{ingredient.ingredient}</p>
+                        <p>{ingredient.measurement}</p>
                     </div>    
                 {/each}
             </div>
         </div>
         <div class="instructions">
             <h3>Instructions</h3>
-            <div>
-                <p>{drink.strInstructions}</p>
-            </div>
+            <p>{drink.strInstructions}</p>
         </div>
     {:catch error}
 
