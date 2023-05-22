@@ -9,11 +9,10 @@
 
         // Ingredients and measurements
         drink.ingredients = [];
-        for(let i = 1; drink["strIngredient" + i] != null; i++)
-        {
+        for(let i = 1; drink["strIngredient" + i] != null; i++) {
             drink.ingredients.push({ ingredient: drink["strIngredient" + i], measurement: drink["strMeasure" + i]});
         }
-        
+
         return drink;
     }
     
