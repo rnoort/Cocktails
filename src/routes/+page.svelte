@@ -6,7 +6,7 @@
     }
 
     async function fetchAlcoholicDrinks() {
-        let response = await (await fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic")).json();
+        let response = await (await fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic")).json();
 
         return response.drinks;
     }
@@ -20,6 +20,9 @@
             let alcoholicDrinks = await fetchAlcoholicDrinks();
 
             // Remove alcoholic drinks from response
+            response.drinks = response.drinks.filter((drink) => {
+                return alcoholicDrinks.find((o) => o.idDrink == drink.idDrink) == undefined;
+            });
         }
 
         return response.drinks;
