@@ -89,6 +89,7 @@
         <thead>
             <td>Image</td>
             <td>Name</td>
+            <td>Details</td>
         </thead>
         <tbody>
             {#await drinks}
@@ -97,7 +98,8 @@
                 {#each drinks as drink, index}
                     <tr>
                         <td><img src={drink.strDrinkThumb + "/preview"} alt={drink.strDrink}></td>
-                            <td>{drink.strDrink}</td>
+                        <td>{drink.strDrink}</td>
+                        <td><a href="/drink/{drink.idDrink}">Details</a></td>
                     </tr>
                 {/each}
             {:catch error}
