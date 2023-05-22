@@ -29,7 +29,7 @@
     let currentCategory = "none";
 
     let categories = fetchCategories();
-    $: drinks = fetchDrinksByCategory(currentCategory, showMocktailsOnly); 
+    $: drinks = fetchDrinksByCategory(currentCategory, showAlcoholic); 
 </script>
 
 <style lang="scss">
