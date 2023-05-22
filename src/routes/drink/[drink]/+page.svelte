@@ -3,9 +3,11 @@
     import { page } from "$app/stores";
 
     async function fetchDrink(id) {
-        let response = await (await fetch("https://thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id)).json();
+        let response =  await fetch("https://thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id);
+
+        let decodedResponse = await response.json();
        
-        let drink = response.drinks[0];
+        let drink = decodedResponse.drinks[0];
 
         // Ingredients and measurements
         drink.ingredients = [];
